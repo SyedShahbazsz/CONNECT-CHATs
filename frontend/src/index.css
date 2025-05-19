@@ -7,6 +7,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+/* canvas#tsparticles {
+  border: 1px solid red;
+} */
+
+/* .logo:hover {
+  animation: wiggle 0.5s ease-in-out infinite;
+} */
+
 /* dark mode looking scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

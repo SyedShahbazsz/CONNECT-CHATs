@@ -49,7 +49,7 @@ function AppContent() {
         <img
           src="/logosz.png"
           alt="Logo"
-          className="absolute top-4 left-4 w-32 h-auto z-50 cursor-pointer wiggle"
+          className="absolute top-4 left-4 w-36 h-auto z-50 cursor-pointer wiggle"
         />
         </> 
       )}

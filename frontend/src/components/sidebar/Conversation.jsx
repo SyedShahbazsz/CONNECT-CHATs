@@ -12,11 +12,20 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
     return (
         <>
             <div
-                className={`flex gap-3 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer transition-all duration-200
-                ${isSelected ? "bg-sky-500" : ""}
-                `}
-                onClick={() => setSelectedConversation(conversation)}
+            className={`flex gap-3 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer transition-all duration-200
+            ${isSelected ? "bg-sky-500" : ""}
+            `}
+            onClick={() => {
+            setSelectedConversation(conversation);
+
+            if (window.innerWidth < 640) {
+            setTimeout(() => {
+                document.getElementById('message-container')?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+            }
+            }}
             >
+
                 <div className={`avatar ${isOnline ? "online" : ""}`}>
                     <div className='w-10 sm:w-12 rounded-full'>
                         <img src={conversation.profilePic} alt="user avatar" className="object-cover" />

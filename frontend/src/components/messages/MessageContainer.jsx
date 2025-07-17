@@ -13,26 +13,34 @@ const MessageContainer = () => {
     }, [setSelectedConversation]);
 
     return (
-        <div className='flex flex-col flex-1 min-w-0 bg-black/30 backdrop-blur-md'>
+        <div
+            id="message-container"
+            className='flex flex-col h-full w-full bg-black/30 backdrop-blur-md'
+        >
             {!selectedConversation ? (
                 <NoChatSelected />
             ) : (
                 <>
-                    <div className='bg-lime-400 px-4 py-2 mb-2 flex items-center gap-2'>
+                    {/* Chat Header */}
+                    <div className='bg-lime-400 px-4 py-2 flex items-center gap-2'>
                         <img
                             src={selectedConversation.profilePic}
                             alt={`${selectedConversation.fullName}'s profile`}
-                            className='w-10 h-10 rounded-full'
+                            className='w-10 h-10 rounded-full object-cover'
                         />
                         <span className='text-gray-900 font-bold text-sm sm:text-base'>
                             {selectedConversation.fullName}
                         </span>
                     </div>
+
+                    {/* Messages Section */}
                     <div className="flex-1 overflow-y-auto">
                         <Messages />
-                     </div>
+                    </div>
+
+                    {/* Message Input at Bottom */}
                     <div className="mt-auto">
-                      <MessageInput />
+                        <MessageInput />
                     </div>
                 </>
             )}
@@ -41,6 +49,7 @@ const MessageContainer = () => {
 };
 export default MessageContainer;
 
+// No Chat Selected View
 const NoChatSelected = () => {
     const { authUser } = useAuthContext();
     return (
@@ -53,6 +62,7 @@ const NoChatSelected = () => {
         </div>
     );
 };
+
 
 
 // import { useEffect } from "react";
